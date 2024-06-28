@@ -1,4 +1,4 @@
-# Minst
+# Handwritten Digit Image Classification
 
 This repository contains code related to the MINST dataset, which is a large database of handwritten digits commonly used for training various image processing systems.
 
