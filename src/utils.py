@@ -94,8 +94,9 @@ def load_all_images(source_directory, class_names):
 def save_images(data, labels, folder):
     os.makedirs(folder, exist_ok=True)
     for i, (image, label) in enumerate(zip(data, labels)):
+        path = folder + '/' + str(label)+ '/' + str(label) + '_'+ str(i)+'.png'
         img = Image.fromarray(image)
-        img.save(os.path.join(folder, f"{i}_{label}.png"))
+        img.save(path)
 
      
 def download_splited_minst_dataset():        
@@ -108,6 +109,6 @@ def download_splited_minst_dataset():
     y_all = np.concatenate((y_train, y_test))
 
     # Save all images
-    save_images(x_all, y_all, "../mnist_all")
+    save_images(x_all, y_all, "../datasets/mnist_all")
 
     print("MNIST images saved successfully.")

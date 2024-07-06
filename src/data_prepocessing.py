@@ -7,28 +7,7 @@ import sys
 from PIL import Image
 sys.path.append(os.path.abspath('../src'))
 from utils import remove_image
-
-def resize_and_rename_images(source_directory,detination_directory , class_names, lenght, width):
-    counter = 0
-    for class_name in class_names:
-        src = source_directory + str(class_name)+'/'
-        image_names = os.listdir(path=src)
-        print(type(image_names))
-        for image_name in image_names:
-            print(src+image_name+'\n')
-            image = cv2.imread(src+image_name)
-            resized_image = cv2.resize(image, (lenght, width))
-            cv2.imwrite(detination_directory+class_name+'/'+class_name+'_'+str(counter)+'.jpeg', resized_image)
-            counter += 1
-                
-
-def rename_images(image_dir, new_name_prefix, counting_number=0):
-    for image_file in os.listdir(image_dir):
-        old_image_path = os.path.join(image_dir, image_file)
-        new_image_path = os.path.join(image_dir, new_name_prefix +'_'+ str(counting_number) + '.jpeg')
-        os.rename(old_image_path, new_image_path)
-        counting_number += 1
-        
+       
 
 
 def calculate_train_val_test_sizes(total_sizes_each_class, val_percetage, test_percetage):
