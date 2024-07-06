@@ -8,17 +8,15 @@ import matplotlib.pyplot as plt
 def get_untrained_custom_model(imgage_width, imgage_height, optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy']):
     model = Sequential()
     # Convolutional layer
+    model.add(Conv2D(filters=32, kernel_size=(3, 3), activation='relu', input_shape=(imgage_width, imgage_height, 1), kernel_regularizer=l2(0.001)))  
     model.add(Conv2D(filters=32, kernel_size=(3, 3), activation='relu', input_shape=(imgage_width, imgage_height, 1), kernel_regularizer=l2(0.001)))
-    model.add(Dropout(0.25))    
-    model.add(Conv2D(filters=32, kernel_size=(3, 3), activation='relu', input_shape=(imgage_width, imgage_height, 1), kernel_regularizer=l2(0.001)))
-    model.add(MaxPooling2D((2, 2)))
-    model.add(Dropout(0.25))    
+    model.add(MaxPooling2D((2, 2)))   
     model.add(Flatten())
     # Dense layers
     model.add(Dense(units=64, activation='relu'))
     model.add(Dropout(rate=0.5))
     # Output layer
-    model.add(Dense(units=2, activation='softmax'))
+    model.add(Dense(units=10, activation='softmax'))
     
     
     model.compile(optimizer=optimizer, loss=loss , metrics=metrics)
