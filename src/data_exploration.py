@@ -5,6 +5,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.decomposition import PCA
 from sklearn.cluster import KMeans
+from utils import display_image, load_image
+
 
 def get_avgrage_width_and_lenght(root_directory, class_names):
     dimentions = []
@@ -63,3 +65,20 @@ def apply_kmeans_clustering(reduced_data, number_of_clusters):
     labels = kmeans.labels_ 
     return labels 
             
+            
+def image_canny_edge_detection(blurred_image):
+    edges = cv2.Canny(blurred_image, 100, 200)
+    display_image(edges, 'Canny Edge Detection', 'x', 'y')
+    
+    
+def gaussian_blure():
+    image = load_image('../datasets/mnist_all/0/0_1.png')
+    blurred_image = cv2.GaussianBlur(image, (5, 5), 0)
+    # Ensure the blurred image is of type CV_8UC1
+    blurred_image_float = blurred_image.astype('float32')
+    display_image(blurred_image_float, 'Random Image', 'x', 'y')
+    return blurred_image, blurred_image_float
+    
+    
+def thresholding(image):
+    return cv2.threshold(image, 127, 255, cv2.THRESH_BINARY)

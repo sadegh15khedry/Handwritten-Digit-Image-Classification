@@ -7,6 +7,7 @@ import numpy as np
 from tensorflow.keras.models import load_model
 import tensorflow as tf
 from PIL import Image
+import tensorflow as tf
 
 
  
@@ -112,3 +113,7 @@ def download_splited_minst_dataset():
     save_images(x_all, y_all, "../datasets/mnist_all")
 
     print("MNIST images saved successfully.")
+    
+def check_tensorflow():
+    #making sure the gpu is available
+    print("Num GPUs Available: ", len(tf.config.experimental.list_physical_devices('GPU')))
