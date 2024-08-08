@@ -50,7 +50,45 @@ The MNIST dataset is used in this project. It consists of 60,000 training images
 
 ## Model Performance
 
-this section will be added
+### Train and Validation data Results
+
+- train loss: 0.0616
+- train accuracy: 0.9844
+- val_loss: 0.0666
+- val_accuracy: 0.9859
+
+![training_validation_loss_and_accuracy](https://github.com/user-attachments/assets/d7384c5f-4fbe-48eb-a019-69c78740290b)
+[Train accuracy and loss]
+
+
+# Test Data Results
+
+- Test accuracy: 0.9872307777404785
+- Test loss: 0.06959925591945648
+- precision: 0.9872685356098663
+- recall: 0.9872307985515533
+- class based reesults
+```
+              precision    recall  f1-score   support
+
+           0       1.00      0.98      0.99      1035
+           1       0.99      1.00      0.99      1181
+           2       0.99      0.98      0.99      1048
+           3       0.99      0.99      0.99      1071
+           4       0.98      0.99      0.98      1023
+           5       0.98      0.99      0.99       946
+           6       0.98      1.00      0.99      1031
+           7       0.99      0.99      0.99      1093
+           8       0.99      0.98      0.98      1023
+           9       0.99      0.98      0.98      1043
+
+    accuracy                           0.99     10494
+   macro avg       0.99      0.99      0.99     10494
+weighted avg       0.99      0.99      0.99     10494
+```
+
+![cm](https://github.com/user-attachments/assets/68a2bb7c-6bc6-4d1e-b8f6-09a91578c1eb)
+[Confiusion matrix]
 
 ## Installation Guide
 
@@ -88,33 +126,12 @@ To set up the project environment, use the `environment.yml` file to create a co
 
 ## Further Improvements
 
-- Add hyperparameter tuning to optimize the model parameters.
+- Experimenting models like VGG, ResNet, Inception and etc
 
 # License
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-# Random Forest From The Scatch
 
-
-## Introduction
-
-This project utilizes a Random Forest model that has been built from the scratch to classify on Iris Dataset. The main reason behind this project was to get a better understanding of how the Random Forest works.
-
-## Table of Contents
-
-- [Overview](#overview)
-- [Directory Structure](#directory-structure)
-- [Files and Functions](#files-and-functions)
-- [Dataset](#dataset)
-- [Model Performance](#model-performance)
-- [Installation Guide](#installation-guide)
-- [Acknowledgments](#acknowledgments)
-- [Further Improvements](#further-improvements)
-- [License](#license)
-
-## Overview
-
-This project is focused on implementing a custom Random Forest model and comparing it with the standard scikit-learn Random Forest model. The project includes data exploration, data preprocessing, model training, and evaluation phases using the credit card transaction fraud detection dataset.
 
 
 
