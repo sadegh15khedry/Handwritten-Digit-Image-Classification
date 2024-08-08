@@ -58,7 +58,7 @@ The MNIST dataset is used in this project. It consists of 60,000 training images
 - val_accuracy: 0.9859
 
 ![training_validation_loss_and_accuracy](https://github.com/user-attachments/assets/d7384c5f-4fbe-48eb-a019-69c78740290b)
-[Train accuracy and loss]
+*Train accuracy and loss*
 
 
 # Test Data Results
@@ -88,7 +88,7 @@ weighted avg       0.99      0.99      0.99     10494
 ```
 
 ![cm](https://github.com/user-attachments/assets/68a2bb7c-6bc6-4d1e-b8f6-09a91578c1eb)
-[Confiusion matrix]
+*Confiusion matrix*
 
 ## Installation Guide
 
